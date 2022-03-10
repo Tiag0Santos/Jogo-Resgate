@@ -205,6 +205,66 @@ function start() { // Inicio da função start()
 		}
 		
 	} // Fim da função explosao1()
+
+	//Reposiciona Inimigo2	
+	function reposicionaInimigo2() {
+	
+		var tempoColisao4=window.setInterval(reposiciona4, 5000);
+			
+			function reposiciona4() {
+			window.clearInterval(tempoColisao4);
+			tempoColisao4=null;
+				
+				if (fimdejogo==false) {
+				
+				$("#fundoGame").append("<div id=inimigo2></div");
+				
+			}				
+		}		
+	}
+	
+	//Explosão2	
+	function explosao2(inimigo2X,inimigo2Y) {
+	
+		$("#fundoGame").append("<div id='explosao2'></div");
+		$("#explosao2").css("background-image", "url(imgs/explosao.png)");
+		var div2=$("#explosao2");
+		div2.css("top", inimigo2Y);
+		div2.css("left", inimigo2X);
+		div2.animate({width:200, opacity:0}, "slow");
+		
+		var tempoExplosao2=window.setInterval(removeExplosao2, 1000);
+		
+			function removeExplosao2() {
+				
+				div2.remove();
+				window.clearInterval(tempoExplosao2);
+				tempoExplosao2=null;
+				
+			}
+			
+			
+		} // Fim da função explosao2()
+
+		//Reposiciona Amigo
+	
+	function reposicionaAmigo() {
+	
+		var tempoAmigo=window.setInterval(reposiciona6, 6000);
+		
+			function reposiciona6() {
+			window.clearInterval(tempoAmigo);
+			tempoAmigo=null;
+			
+			if (fimdejogo==false) {
+			
+			$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
+			
+			}
+			
+		}
+		
+	} // Fim da função reposicionaAmigo()
 	
 } //Fim da função start()
 
