@@ -164,19 +164,24 @@ function start() { // Inicio da função start()
 		} // Fecha disparo()
 
 	function colisao() {
-	var colisao1 = ($("#jogador").collision($("#inimigo1")));
-	// jogador com o inimigo1
+	var colisao1 = ($("#jogador").collision($("#inimigo1")));var colisao2 = ($("#jogador").collision($("#inimigo2")));
+	var colisao3 = ($("#disparo").collision($("#inimigo1")));
+	var colisao4 = ($("#disparo").collision($("#inimigo2")));
+	var colisao5 = ($("#jogador").collision($("#amigo")));
+	var colisao6 = ($("#inimigo2").collision($("#amigo")));
+	
+	// jogador com o inimigo1	
 	
 	if (colisao1.length>0) {
 		
-	inimigo1X = parseInt($("#inimigo1").css("left"));
-	inimigo1Y = parseInt($("#inimigo1").css("top"));
-	explosao1(inimigo1X,inimigo1Y);
+		inimigo1X = parseInt($("#inimigo1").css("left"));
+		inimigo1Y = parseInt($("#inimigo1").css("top"));
+		explosao1(inimigo1X,inimigo1Y);
 
-	posicaoY = parseInt(Math.random() * 334);
-	$("#inimigo1").css("left",694);
-	$("#inimigo1").css("top",posicaoY);
-	}
+		posicaoY = parseInt(Math.random() * 334);
+		$("#inimigo1").css("left",694);
+		$("#inimigo1").css("top",posicaoY);
+		}
 
 	} //Fim da função colisao()
 
