@@ -7,9 +7,10 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='inimigo2'></div>");
 	$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
 
-	//Principais variáveis do jogo
+	//Principais variáveis do jogo	
 	
 	var podeAtirar=true;
+	var fimdejogo=false;
 	var jogo = {}
 	var velocidade = 5;
 	var posicaoY = parseInt(Math.random() * 334);
