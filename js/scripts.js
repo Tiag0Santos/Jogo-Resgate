@@ -121,7 +121,7 @@ function start() { // Inicio da função start()
 		function moveinimigo2() {
 
 			posicaoX = parseInt($("#inimigo2").css("left"));
-			$("#inimigo2").css("left",posicaoX-3);
+			$("#inimigo2").css("left",posicaoX-velocidade);
 						
 				if (posicaoX <= 0) {
 					
@@ -234,6 +234,7 @@ function start() { // Inicio da função start()
 			// Disparo com o inimigo2		
 			if (colisao4.length>0) {
 				
+				velocidade=velocidade+0.3;
 				pontos=pontos+50;
 				inimigo2X = parseInt($("#inimigo2").css("left"));
 				inimigo2Y = parseInt($("#inimigo2").css("top"));
@@ -430,3 +431,11 @@ function start() { // Inicio da função start()
 } //Fim da função start()
 
 inicio.addEventListener('click', start);
+
+//Reinicia o Jogo		
+function reiniciaJogo() {
+	somGameover.pause();
+	$("#fim").remove();
+	start();
+	
+} //Fim da função reiniciaJogo
